@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import photo from "./animal.jpg";
+import cat from "./cat.jpg";
 
 function App() {
   const [answer, setAnswer] = useState("");
   const [advice, setAdvice] = useState("");
-  const [btn, setBtn] = useState("FIND ACTIVITY");
+  const [btn, setBtn] = useState("FIND a FACT");
+
+  
 
   useEffect(() => {
     const getAnswer = async () => {
-      const response = await fetch("https://bored-api.appbrewery.com/random");
+      
+      const response = await fetch("https://catfact.ninja/fact");
       const data = await response.json();
-      setAnswer(data.activity);
+      setAnswer(data.fact);
       console.log(data);
     };
     getAnswer();
@@ -19,20 +22,20 @@ function App() {
 
   const getNewAnswer = () => {
     setAnswer(setAdvice);
-    if (btn === "FIND ACTIVITY") {
+    if (btn === "FIND a FACT") {
       setBtn("TRY AGAIN");
     } else {
-      setBtn("FIND ACTIVITY");
+      setBtn("FIND a FACT");
     }
   };
 
   return (
     <div className="container">
       <div>
-        <img className="page_back" src={photo} alt="pic" />
+        <img className="page_back" src={cat} alt="pic" />
       </div>
       <div className="container">
-        <h1>What would you like to do when you are bored?</h1>
+        <h1>What do you know about cats? 😼</h1>
         <p>{answer}</p>
         <p></p>
       </div>
