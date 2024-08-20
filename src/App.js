@@ -12,7 +12,6 @@ function App() {
       const response = await fetch("https://catfact.ninja/fact");
       const data = await response.json();
       setAnswer(data.fact);
-      console.log(data);
     };
     getAnswer();
   }, [advice]);
