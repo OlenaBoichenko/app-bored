@@ -7,11 +7,8 @@ function App() {
   const [advice, setAdvice] = useState("");
   const [btn, setBtn] = useState("FIND a FACT");
 
-  
-
   useEffect(() => {
     const getAnswer = async () => {
-      
       const response = await fetch("https://catfact.ninja/fact");
       const data = await response.json();
       setAnswer(data.fact);

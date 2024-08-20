@@ -1,9 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container {
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
+}
+
+.container p {
+  max-width: 50%;
+  margin-top: 20px;
 }
 
 .page_back {
@@ -17,24 +28,50 @@
 }
 
 h1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 35px;
   margin-top: 50px;
 }
 
 p {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 25px;
-  
 }
 
+.btn {
+  position: fixed;
+  top: 400px;
+}
 
 button {
   cursor: pointer;
-  background:  linear-gradient(90deg, rgba(244,235,221,1) 0%, rgba(107,85,71,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 235, 221, 1) 0%,
+    rgba(107, 85, 71, 1) 100%
+  );
   color: #fff;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 30px;
   border: none;
   padding: 25px 60px;
+}
+
+@media all and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .container p {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: justify;
+  }
+
+  .btn {
+    top: auto;
+    bottom: 100px;
+  }
 }
